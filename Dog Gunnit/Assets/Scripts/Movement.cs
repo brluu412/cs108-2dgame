@@ -8,7 +8,6 @@ public class Movement : MonoBehaviour
     public float speed = 100f;
     private Rigidbody2D rb;
     private Vector2 Direction;
-    private BoxCollider2D collider;
 
     // Start is called before the first frame update
     void Start()
