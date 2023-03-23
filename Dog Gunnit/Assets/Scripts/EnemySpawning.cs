@@ -11,6 +11,7 @@ public class EnemySpawning : MonoBehaviour
     void Start()
     {
         parentObject = new GameObject("Enemy").transform;
+        
         //InvokeRepeating("SpawnSprite", spawndelay, spawndelay);   
     }
 
@@ -48,7 +49,7 @@ public class EnemySpawning : MonoBehaviour
         }
         else if (randomSide == 1) // Right
         {
-            x = cameraWidth - 0.5f;
+            x = cameraWidth - 1.5f;
             y = Random.Range(-cameraHeight, cameraHeight);
         }
         else if (randomSide == 2) // Bottom
@@ -58,7 +59,7 @@ public class EnemySpawning : MonoBehaviour
         }
         else // Left
         {
-            x = -cameraWidth + 0.5f;
+            x = -cameraWidth - 0.5f;
             y = Random.Range(-cameraHeight, cameraHeight);
         }
 
