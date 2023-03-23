@@ -19,9 +19,7 @@ public class EnemySpawning : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && !enemySpawned)
         {
-            Debug.Log("Space Pressed");
             SpawnEnemy();
-            Debug.Log("Spawned Enemy");
             enemySpawned = true;
         }
 
@@ -34,22 +32,41 @@ public class EnemySpawning : MonoBehaviour
 
     void SpawnEnemy()
     {
-    Camera mainCamera = Camera.main;
+      Camera mainCamera = Camera.main;
     if (mainCamera != null)
+    {
+        float cameraWidth = mainCamera.orthographicSize * mainCamera.aspect;
+        float cameraHeight = mainCamera.orthographicSize;
+
+        // Calculate random position along perimeter of camera viewport
+        float randomSide = Random.Range(0, 4);
+        float x, y;
+        if (randomSide == 0) // Top
         {
-            float cameraWidth = mainCamera.orthographicSize * mainCamera.aspect;
-            float cameraHeight = mainCamera.orthographicSize;
-
-            float minX = mainCamera.transform.position.x - cameraWidth * 0.4f + Enemy.transform.localScale.x / 2f;
-            float maxX = mainCamera.transform.position.x + cameraWidth * 0.4f - Enemy.transform.localScale.x / 2f;
-            float minY = mainCamera.transform.position.y - cameraHeight * 0.4f + Enemy.transform.localScale.y / 2f;
-            float maxY = mainCamera.transform.position.y + cameraHeight * 0.4f - Enemy.transform.localScale.y / 2f;
-
-            Vector3 spawnPos = new Vector3(Random.Range(minX, maxX), Random.Range(minY, maxY), mainCamera.nearClipPlane);
-
-            GameObject enemyObj = Instantiate(Enemy, spawnPos, Quaternion.identity);
-            enemyObj.transform.parent = parentObject;
+            x = Random.Range(-cameraWidth, cameraWidth);
+            y = cameraHeight;
         }
+        else if (randomSide == 1) // Right
+        {
+            x = cameraWidth - 0.5f;
+            y = Random.Range(-cameraHeight, cameraHeight);
+        }
+        else if (randomSide == 2) // Bottom
+        {
+            x = Random.Range(-cameraWidth, cameraWidth);
+            y = -cameraHeight + 1;
+        }
+        else // Left
+        {
+            x = -cameraWidth + 0.5f;
+            y = Random.Range(-cameraHeight, cameraHeight);
+        }
+
+        Vector3 spawnPos = new Vector3(x, y, mainCamera.nearClipPlane);
+
+        GameObject enemyObj = Instantiate(Enemy, spawnPos, Quaternion.identity);
+        enemyObj.transform.parent = parentObject;
+    }
     }
 
     void StopSpawning(){
