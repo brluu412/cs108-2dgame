@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public Animator animator;
     public float speed = 100f;
     private Rigidbody2D rb;
-    private Vector2 Direction;
+    public Vector2 Direction;
 
     private Camera mainCamera;
     private float spriteHalfWidth, spriteHalfHeight;
@@ -41,7 +41,7 @@ public class Movement : MonoBehaviour
         ClampToScreen();
     }
 
-    private void Move()
+    public void Move()
     {
         float Horizontal = Input.GetAxisRaw("Horizontal");
         float Vertical = Input.GetAxisRaw("Vertical");

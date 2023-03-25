@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -7,10 +8,12 @@ public class Health : MonoBehaviour
     [SerializeField] private int health = 100;
 
     private int MAX_HEALTH = 100;
+
+    GameObject player;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -34,7 +37,13 @@ public class Health : MonoBehaviour
 
         health -= amount;
         if(health <= 0){
+            if(player.GetComponent<Health>().health <= 0){
+                //restart game
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+            else{
             Destroy(gameObject);
+            }
         }
     }
 
