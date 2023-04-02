@@ -11,25 +11,22 @@ public class LifeBar : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
-
-
-        
     }
 
     // Update is called once per frame
     void Update()
     {
         int health = player.GetComponent<Health>().health;
-        if(health == 40){
+        if(health <= 40){
             Destroy(GameObject.Find("Bone 5"));
         }
-        if(health == 30){
+        if(health <= 30){
             Destroy(GameObject.Find("Bone 4"));
         }
-        if(health == 20){
+        if(health <= 20){
             Destroy(GameObject.Find("Bone 3"));
         }
-        if(health == 10){
+        if(health <= 10){
             Destroy(GameObject.Find("Bone 2"));
         }
         if(health == 0){
