@@ -22,7 +22,7 @@ public class Shoot : MonoBehaviour
     }
 
     void Fire(){
-        if(Input.GetKeyDown("space") && canFire)
+        if(Input.GetKeyDown("space") && canFire && GetComponent<GunBehavior>().isReloading == false)
         {
         canFire = false;
         GameObject newBullet = Instantiate(bullet, player.transform.position + new Vector3(0f, 0.8f, 0f), Quaternion.identity);

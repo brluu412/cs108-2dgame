@@ -7,6 +7,7 @@ public class GunBehavior : MonoBehaviour
     GameObject mag;
     Animator magAnim;
     public int clipSize;
+    public bool isReloading = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,7 +16,6 @@ public class GunBehavior : MonoBehaviour
         magAnim = mag.GetComponent<Animator>();
         
         magAnim.SetBool("reloading", false);
-        magAnim.SetBool("done_reloading", false);
         magAnim.SetInteger("mag_size", clipSize);
     }
 
@@ -37,6 +37,10 @@ public class GunBehavior : MonoBehaviour
     }
 
     private IEnumerator reload(){
+        if(isReloading){
+            yield break;
+        }
+        isReloading = true;
         //disable shoot script
         GetComponent<Shoot>().enabled = false;
         //take 5 seconds to reload
@@ -46,11 +50,10 @@ public class GunBehavior : MonoBehaviour
         this.clipSize = 12;
         magAnim.SetInteger("mag_size", clipSize);
         Debug.Log("Reloaded");
-        magAnim.SetBool("done_reloading", true);
-        yield return new WaitForSeconds(0.4f);
+        //yield return new WaitForSeconds(1f);
         //enable shoot script
         GetComponent<Shoot>().enabled = true;
         magAnim.SetBool("reloading", false);
-        magAnim.SetBool("done_reloading", false);
+        isReloading = false;
     }
 }
