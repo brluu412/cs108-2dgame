@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3d26304fe7146417e86c5482d969f3ef
+guid: 3b279346e680c4a60b66576a35d31102
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -117,116 +117,32 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: dogIdle_south0
+      name: dogRun_0
       rect:
         serializedVersion: 2
         x: 7
-        y: 100
+        y: 32
         width: 18
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+        height: 22
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.5482436}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f8767a425fee4eedb11d39caea30ee9
-      internalID: -332428303
+      spriteID: 21e7e50a9a1a9477c9ac8271926ec7e5
+      internalID: 841761174
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogIdle_south1
+      name: dogRun_1
       rect:
         serializedVersion: 2
         x: 39
-        y: 100
-        width: 18
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ef962b1ba5804a65b1a9cc3aae82787
-      internalID: -1340368864
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_southeast0
-      rect:
-        serializedVersion: 2
-        x: 69
-        y: 101
-        width: 21
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2dcfcbc0c35a14d52803f7bcc98d1338
-      internalID: 1691021296
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_southeast1
-      rect:
-        serializedVersion: 2
-        x: 101
-        y: 101
-        width: 21
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 910c5927b0fa74f899c232a5044df056
-      internalID: 1272856291
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_east0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 69
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ac852c603ea0e4566a7dbdc1b1d421f2
-      internalID: -173360876
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_east1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 69
+        y: 32
         width: 18
         height: 21
       alignment: 0
@@ -236,186 +152,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 892050f930da64eec97124eb27eb9a14
-      internalID: 538214901
+      spriteID: 0abff7197940e4b49bb275265030fcd6
+      internalID: 1112307407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogIdle_northeast0
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 69
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0bffae6f702b94f9da610defd20a48b4
-      internalID: -1755724989
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_northeast1
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 69
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1ce4f96c036a84515a390eb8bead3996
-      internalID: 1449548199
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_north0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 36
-        width: 18
-        height: 24
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da15e44545d5c406a8aea17f05f25208
-      internalID: -1639920889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_north1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 36
-        width: 18
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 015831ac9043646af9d8956a9d40f8dd
-      internalID: 1665132683
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_northwest0
-      rect:
-        serializedVersion: 2
-        x: 71
-        y: 37
-        width: 17
-        height: 23
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c8cf35ddcf7994cdb982cbf2377516fc
-      internalID: 109132108
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_northwest1
-      rect:
-        serializedVersion: 2
-        x: 103
-        y: 37
-        width: 17
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0b645776c9f84df592df9bdea3e855c
-      internalID: 1605115599
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_west0
-      rect:
-        serializedVersion: 2
-        x: 7
-        y: 5
-        width: 18
-        height: 22
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b88dd5499764f40c3bbbad553cd6b0a8
-      internalID: -1256251606
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_west1
-      rect:
-        serializedVersion: 2
-        x: 39
-        y: 5
-        width: 18
-        height: 21
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 692d41434db2442788ff495e2d7bc560
-      internalID: -460501744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: dogIdle_soithwest0
+      name: dogRun_2
       rect:
         serializedVersion: 2
         x: 70
-        y: 5
+        y: 32
         width: 21
         height: 22
       alignment: 0
@@ -425,18 +173,18 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d84ae913c473248a5975e51840b65d0f
-      internalID: 963272992
+      spriteID: 5af3c5dc5a5d04294ba4060f57ed7559
+      internalID: 947806645
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: dogIdle_southwest1
+      name: dogRun_3
       rect:
         serializedVersion: 2
         x: 102
-        y: 5
+        y: 32
         width: 21
         height: 21
       alignment: 0
@@ -446,8 +194,176 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d8eeff0ae0f944120849567704622ccd
-      internalID: 1062804991
+      spriteID: 86f69972f17b5454d87f215f843fab96
+      internalID: -1467010202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_4
+      rect:
+        serializedVersion: 2
+        x: 134
+        y: 34
+        width: 20
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b7b9eb2829a84649a9a04ba4c04ff89
+      internalID: 1988377333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_5
+      rect:
+        serializedVersion: 2
+        x: 165
+        y: 35
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 421b8557a4e914420b727a258a2467f2
+      internalID: 2130692246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_6
+      rect:
+        serializedVersion: 2
+        x: 6
+        y: 4
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49e69efdb2673475682dcea126364862
+      internalID: 2008557123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_7
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 2
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046cd1fd24bc04a698aa129ae5dbd332
+      internalID: 1867385769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_8
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 2
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c56cbfb6c79c548dbb4c010fde9dd5a2
+      internalID: -347048894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_9
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 2
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b6245b94c9ff45f1b79ca348bbb089b
+      internalID: -1328729260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_10
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 4
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd86b24ff0a424b70b6aee9c2d82c775
+      internalID: 1062367961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dogRun_11
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 3
+        width: 21
+        height: 20
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed501956226d849b5b273adac18f4519
+      internalID: 1271270833
       vertices: []
       indices: 
       edges: []
@@ -463,22 +379,18 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      dogIdle_east0: -173360876
-      dogIdle_east1: 538214901
-      dogIdle_north0: -1639920889
-      dogIdle_north1: 1665132683
-      dogIdle_northeast0: -1755724989
-      dogIdle_northeast1: 1449548199
-      dogIdle_northwest0: 109132108
-      dogIdle_northwest1: 1605115599
-      dogIdle_soithwest0: 963272992
-      dogIdle_south0: -332428303
-      dogIdle_south1: -1340368864
-      dogIdle_southeast0: 1691021296
-      dogIdle_southeast1: 1272856291
-      dogIdle_southwest1: 1062804991
-      dogIdle_west0: -1256251606
-      dogIdle_west1: -460501744
+      dogRun_0: 841761174
+      dogRun_1: 1112307407
+      dogRun_10: 1062367961
+      dogRun_11: 1271270833
+      dogRun_2: 947806645
+      dogRun_3: -1467010202
+      dogRun_4: 1988377333
+      dogRun_5: 2130692246
+      dogRun_6: 2008557123
+      dogRun_7: 1867385769
+      dogRun_8: -347048894
+      dogRun_9: -1328729260
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

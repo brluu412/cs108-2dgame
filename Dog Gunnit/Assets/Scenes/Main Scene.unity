@@ -201,7 +201,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 163188781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -32.82, y: 11.53, z: 0}
+  m_LocalPosition: {x: -21.18, y: 12.34, z: 0}
   m_LocalScale: {x: 7, y: 7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -298,8 +298,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1669778389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9860bc1f69d52415491feaf3e3ca2caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -382,8 +382,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1669778389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9860bc1f69d52415491feaf3e3ca2caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -715,8 +715,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1669778389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9860bc1f69d52415491feaf3e3ca2caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -860,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1129712606}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -22.837002, y: 11.598, z: 0}
+  m_LocalPosition: {x: -10.55, y: 12.32, z: 0}
   m_LocalScale: {x: 27, y: 18, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -910,8 +910,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -353417179
-  m_SortingLayer: -1
+  m_SortingLayerID: 835074421
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 2c4c89052ee6f450dbd61b776211def8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1006,8 +1006,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1669778389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9860bc1f69d52415491feaf3e3ca2caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1081,7 +1081,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -156754779
-  m_SortingLayer: 1
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -332428303, guid: 3d26304fe7146417e86c5482d969f3ef, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1166,6 +1166,11 @@ MonoBehaviour:
   animator: {fileID: 0}
   speed: 7
   Direction: {x: 0, y: 0}
+  magnitude: 0
+  gun: {fileID: 0}
+  shooting: 0
+  isRunning: 0
+  isIdling: 0
 --- !u!61 &1318985219
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1275,8 +1280,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1669778389
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 9860bc1f69d52415491feaf3e3ca2caa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1348,6 +1353,7 @@ GameObject:
   - component: {fileID: 1955839353}
   - component: {fileID: 1955839354}
   - component: {fileID: 1955839355}
+  - component: {fileID: 1955839356}
   m_Layer: 0
   m_Name: Gun
   m_TagString: Untagged
@@ -1384,9 +1390,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   bullet: {fileID: 5335407521770673622, guid: c4b638c366aad433e879a5fa8e8a0883, type: 3}
-  bulletSpeed: 20
+  bulletSpeed: 60
   fireRate: 0.3
   canFire: 1
+  isShooting: 0
 --- !u!114 &1955839355
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1401,3 +1408,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clipSize: 12
   isReloading: 0
+--- !u!95 &1955839356
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1955839352}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f46bc60ab70e44f3581ce7679474192e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0

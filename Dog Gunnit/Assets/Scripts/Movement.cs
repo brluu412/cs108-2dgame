@@ -8,9 +8,13 @@ public class Movement : MonoBehaviour
     public float speed = 100f;
     private Rigidbody2D rb;
     public Vector2 Direction;
-
+    public float magnitude;
     private Camera mainCamera;
     private float spriteHalfWidth, spriteHalfHeight;
+    public GameObject gun;
+    public float shooting;
+    public bool isRunning;
+    public bool isIdling;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,7 @@ public class Movement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator.SetFloat("X", 0);
         animator.SetFloat("Y", -1);
-
+        gun = GameObject.Find("Gun");
         // Get a reference to the main camera
         mainCamera = Camera.main;
 
@@ -46,13 +50,19 @@ public class Movement : MonoBehaviour
         float Horizontal = Input.GetAxisRaw("Horizontal");
         float Vertical = Input.GetAxisRaw("Vertical");
 
+        
+
         if (Horizontal == 0 && Vertical == 0)
         {
             rb.velocity = new Vector2(0, 0);
+            magnitude = 0;
             return;
         }
 
         Direction = new Vector2(Horizontal, Vertical);
+        magnitude = Direction.magnitude;
+
+        
 
         rb.velocity = new Vector2(Horizontal * speed, Vertical * speed);
     }
@@ -61,7 +71,39 @@ public class Movement : MonoBehaviour
     {
         animator.SetFloat("X", Direction.x);
         animator.SetFloat("Y", Direction.y);
+        animator.SetFloat("AnimMoveMagnitude", magnitude);
+        if(magnitude > 0){
+            /*
+            if(isIdling){
+                StartCoroutine(pause());
+            }
+            */
+            isRunning = true;
+            isIdling = false;
+            animator.SetBool("isRunning", isRunning);
+            animator.SetBool("isIdling", isIdling);
+        }
+        else{
+            /*
+            if(isRunning){
+                StartCoroutine(pause());
+            }
+            */
+            isRunning = false;
+            isIdling = true;
+            animator.SetBool("isIdling", isIdling);
+            animator.SetBool("isRunning", isRunning);
+        }
+        animator.SetFloat("isShooting", gun.gameObject.GetComponent<Shoot>().isShooting);
     }
+    /*
+    public IEnumerator pause(){
+        GameObject gun = GameObject.Find("Gun");
+        gun.gameObject.GetComponent<Shoot>().canFire = false;
+        yield return new WaitForSeconds(0.1f);
+        gun.gameObject.GetComponent<Shoot>().canFire = true;
+    }
+    */
 
     private void ClampToScreen()
     {

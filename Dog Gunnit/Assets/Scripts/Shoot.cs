@@ -7,8 +7,9 @@ public class Shoot : MonoBehaviour
     public GameObject player;
     public GameObject bullet;
     public float bulletSpeed = 10f;
-    public float fireRate = 0.5f;
+    public float fireRate = 0.01f;
     public bool canFire = true;
+    public float isShooting = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,15 +19,18 @@ public class Shoot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Fire();
+        StartCoroutine(Fire());
+        //Fire();
     }
 
-    void Fire(){
+    public IEnumerator Fire(){
         if(Input.GetKeyDown("space") && canFire && GetComponent<GunBehavior>().isReloading == false)
         {
+        isShooting = 1f;
+        yield return new WaitForSeconds(0.10f);
         canFire = false;
         GameObject newBullet = Instantiate(bullet, player.transform.position + new Vector3(0f, 0.8f, 0f), Quaternion.identity);
-
+        
         // Set the bullet's direction vector based on the player's movement direction
         Vector2 direction = player.GetComponent<Movement>().Direction;
 
@@ -36,16 +40,19 @@ public class Shoot : MonoBehaviour
 
         // Add force to the bullet in the direction of the player's movement
         newBullet.GetComponent<Rigidbody2D>().AddForce(direction * bulletSpeed, ForceMode2D.Impulse);
-
+        
         //shoot one bullet at a time
         this.GetComponent<GunBehavior>().DecreaseAmmo();
-
+        //isShooting = 0f;
         StartCoroutine(FireCooldown());
     }  
     }
 
     private IEnumerator FireCooldown() {
+        //yield return new WaitForSeconds(0.1f);
+        isShooting = 0f;
         yield return new WaitForSeconds(fireRate);
+        
         canFire = true;
     }
 }
