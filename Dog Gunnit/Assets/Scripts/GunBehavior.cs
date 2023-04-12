@@ -6,6 +6,7 @@ public class GunBehavior : MonoBehaviour
 {
     GameObject mag;
     Animator magAnim;
+    public AudioClip reloadSound;
     public int clipSize;
     public bool isReloading = false;
     // Start is called before the first frame update
@@ -43,6 +44,8 @@ public class GunBehavior : MonoBehaviour
         isReloading = true;
         //disable shoot script
         GetComponent<Shoot>().enabled = false;
+        //play reload sound
+        AudioSource.PlayClipAtPoint(reloadSound, transform.position);
         //take 5 seconds to reload
         Debug.Log("Reloading");
         magAnim.SetBool("reloading", true);

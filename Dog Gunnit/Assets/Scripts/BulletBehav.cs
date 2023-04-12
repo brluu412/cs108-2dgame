@@ -4,10 +4,13 @@ using UnityEngine;
 
 public class BulletBehav : MonoBehaviour
 {
+    public GameObject player;
+    public GameObject smallEnemyPrefab;
+    public GameObject bigEnemyPrefab;
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Player");
     }
 
     // Update is called once per frame
@@ -16,16 +19,22 @@ public class BulletBehav : MonoBehaviour
         
     }
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Enemy"))
         {
             collision.gameObject.GetComponent<Health>().Damage(25);
+            float speed = collision.gameObject.GetComponent<EnemyBehavior>().speed;
+            //stop enemy movement
+            collision.gameObject.GetComponent<EnemyBehavior>().stopMovement();
+            collision.gameObject.GetComponent<EnemyBehavior>().StartCoroutine(collision.gameObject.GetComponent<EnemyBehavior>().pauseMovement());
             Destroy(gameObject);
         }
         if (collision.gameObject.CompareTag("Dog House"))
         {
             Destroy(gameObject);
         }
-    }
+    } 
+
 }

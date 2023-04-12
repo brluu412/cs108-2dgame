@@ -36,15 +36,27 @@ public class Health : MonoBehaviour
         }
 
         health -= amount;
+        //make enemies red in a flash
+        if(gameObject.tag == "Enemy"){
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            //wait a split second and change back to normal
+            Invoke("ResetColor", 0.3f);
+        }
+
         if(health <= 0){
             if(player.GetComponent<Health>().health <= 0){
                 //restart game
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
             else{
+            player.GetComponent<Score>().currentScore += 100;
             Destroy(gameObject);
             }
         }
+    }
+
+    void ResetColor(){
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
     }
 
     public void Heal(int amount){

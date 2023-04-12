@@ -54,10 +54,18 @@ public class Movement : MonoBehaviour
 
         if (Horizontal == 0 && Vertical == 0)
         {
+        
             rb.velocity = new Vector2(0, 0);
             magnitude = 0;
             return;
         }
+        if(Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)){
+                Debug.Log("Shift");
+                this.speed = 0f;
+            }
+            else{
+                this.speed = 7f;
+            }
 
         Direction = new Vector2(Horizontal, Vertical);
         magnitude = Direction.magnitude;

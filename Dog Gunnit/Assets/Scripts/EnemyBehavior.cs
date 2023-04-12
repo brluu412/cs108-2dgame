@@ -7,12 +7,14 @@ public class EnemyBehavior : MonoBehaviour
     [SerializeField]
     private int damage = 5;
     [SerializeField]
-    private float speed = 1.5f;
+    public float speed = 1.5f;
 
     [SerializeField]
     private EnemyData data;
 
     private GameObject player;
+
+    private bool shouldMove = true;
 
     // Start is called before the first frame update
     void Start()
@@ -38,10 +40,36 @@ public class EnemyBehavior : MonoBehaviour
         speed = data.speed;
     }
 
+    public void stopMovement(){
+        StopSwarming();
+        speed = 0;
+    }
+
+    public void resumeMovement(){
+        ResumeSwarming();
+        speed = data.speed;
+    }
+
+    public IEnumerator pauseMovement(){
+        yield return new WaitForSeconds(0.2f);
+        resumeMovement();
+    }
+
+
     
 
-    private void Swarm(){
-        transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+    public void Swarm(){
+        if(shouldMove){
+            transform.position = Vector2.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+    }
+
+    public void StopSwarming() {
+        shouldMove = false;
+    }
+
+    public void ResumeSwarming() {
+        shouldMove = true;
     }
 
     private void OnCollisionEnter2D(Collision2D collider){

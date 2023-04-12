@@ -6,6 +6,8 @@ public class Shoot : MonoBehaviour
 {
     public GameObject player;
     public GameObject bullet;
+    public GameObject enemy;
+    public AudioClip shootSound;
     public float bulletSpeed = 10f;
     public float fireRate = 0.01f;
     public bool canFire = true;
@@ -14,6 +16,7 @@ public class Shoot : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player");
+        enemy = GameObject.Find("Enemy");
     }
 
     // Update is called once per frame
@@ -23,11 +26,18 @@ public class Shoot : MonoBehaviour
         //Fire();
     }
 
+    
+
     public IEnumerator Fire(){
         if(Input.GetKeyDown("space") && canFire && GetComponent<GunBehavior>().isReloading == false)
         {
         isShooting = 1f;
         yield return new WaitForSeconds(0.10f);
+
+        // Play the shoot sound
+        AudioSource.PlayClipAtPoint(shootSound, transform.position);
+
+
         canFire = false;
         GameObject newBullet = Instantiate(bullet, player.transform.position + new Vector3(0f, 0.8f, 0f), Quaternion.identity);
         
